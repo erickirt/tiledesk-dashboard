@@ -275,7 +275,8 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
   duration_in_table: any
 
 
-  caller_phone: string;
+  // caller_phone: string;
+  phone: string;
   called_phone: string;
   call_id: string;
 
@@ -612,8 +613,8 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
               this.duration_op = paramArray[1]
             }
 
-            if (paramArray[0] === 'caller' && paramArray[1] !== '') {
-              this.caller_phone = paramArray[1]
+            if (paramArray[0] === 'phone' && paramArray[1] !== '') {
+              this.phone = paramArray[1]
             }
 
             if (paramArray[0] === 'called' && paramArray[1] !== '') {
@@ -2485,7 +2486,7 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
     this.logger.log('HERE IN SEARCH duration operator ', this.duration_op)
     this.logger.log('HERE IN SEARCH duration ', this.duration)
     this.logger.log('HERE IN SEARCH duration called_phone ', this.called_phone)
-    this.logger.log('HERE IN SEARCH duration caller_phone ', this.caller_phone)
+    this.logger.log('HERE IN SEARCH duration phone ', this.phone)
     this.logger.log('HERE IN SEARCH duration call_id ', this.call_id)
     // this.logger.log('HERE IN SEARCH calledBy ', calledBy)
     this.logger.log('HERE IN SEARCH this.preflight', this.preflight)
@@ -2701,8 +2702,8 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
       this.called_phone = ""
     }
 
-    if (!this.caller_phone) {
-      this.caller_phone = ""
+    if (!this.phone) {
+      this.phone = ""
     }
     if (!this.call_id) {
       this.call_id = ""
@@ -2729,12 +2730,12 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
       + 'duration_op=' + this.duration_op + '&'
       + 'duration=' + this.duration + '&'
       + 'called=' + this.called_phone + '&'
-      + 'caller=' + this.caller_phone + '&'
+      + 'phone=' + this.phone + '&'
       + 'call_id=' + this.call_id
       + timezoneParam
 
     // + 'called_phone=' + this.called_phone + '&'
-    // + 'caller_phone=' + this.caller_phone
+    // + 'phone=' + this.phone
     // + '&'
     // + 'preflight=' + this.preflightValue
 
@@ -2884,8 +2885,8 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
       this.called_phone = ''
     }
 
-    if (this.caller_phone) {
-      this.caller_phone = ''
+    if (this.phone) {
+      this.phone = ''
     }
 
     if (this.called_phone) {
@@ -2972,7 +2973,7 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
     this.duration = '';
     this.duration_op = 'gt';
     this.duration_operator_temp = this.request_duration_operator_array[0]['id']
-    this.caller_phone = '';
+    this.phone = '';
     this.called_phone = '';
     this.call_id = "";
 
@@ -3026,7 +3027,7 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
      //   + 'duration_op=' + '&'
      //   + 'duration=' + '&'
      //   + 'called=' + '&'
-     //   + 'caller=' + '&'
+     //   + 'phone=' + '&'
      //   + 'call_id='   
     this.queryString = ''
     this.pageNo = 0;
