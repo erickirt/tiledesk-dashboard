@@ -1,5 +1,8 @@
 # tiledesk-dashboard
 
+### 2.7.159
+- Improves the search for phone numbers in the history page
+
 ### 2.7.158
 - Adds the ability to search for phone numbers in the history page
 
